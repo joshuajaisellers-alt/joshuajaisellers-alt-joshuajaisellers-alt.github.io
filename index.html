@@ -1,169 +1,96 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>JaiSellers Companies – Honoring Stories. Building Systems. Driving Change.</title>
+  <meta name="description" content="JaiSellers Companies helps mission‑driven teams turn vision into lasting structures through design, strategy, and advocacy. Honoring Stories. Building Systems. Driving Change." />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <style>
-    /* Basic reset and typography */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background-color: #f8f8f8;
-    }
-    header {
-      background-color: #0c2340;
-      color: #fff;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 1.2rem;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    nav {
-      background-color: #082138;
-      display: flex;
-      justify-content: center;
-      padding: 10px 0;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-    nav a:hover {
-      color: #ffde59;
-    }
-    .section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .section h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #0c2340;
-    }
-    .cards {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-    .card {
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      flex: 1 1 280px;
-      padding: 20px;
-      text-align: center;
-    }
-    .card h3 {
-      margin-bottom: 10px;
-      color: #0c2340;
-    }
-    .card p {
-      color: #555;
-    }
-    .about {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .about img {
-      max-width: 150px;
-      border-radius: 50%;
-      align-self: center;
-    }
-    .about div {
-      text-align: center;
-    }
-    footer {
-      background-color: #082138;
-      color: #fff;
-      text-align: center;
-      padding: 20px 0;
-    }
-    @media (min-width: 768px) {
-      .about {
-        flex-direction: row;
-        align-items: center;
-      }
-      .about img {
-        margin-right: 30px;
-      }
-      .about div {
-        text-align: left;
-      }
-    }
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin: 0; color: #111; }
+    header { background:#085; padding: 2rem; color: #fff; }
+    .container { max-width: 980px; margin: 2rem auto; padding: 0 1rem; }
+    nav a { margin-right: 1rem; color: #042; text-decoration: none; font-weight: 600; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:1rem; margin-top:1.25rem; }
+    .card { border:1px solid #e6e6e6; padding:1rem; border-radius:6px; background:#fff; box-shadow:0 1px 2px rgba(0,0,0,0.02); }
+    footer { text-align:center; padding:1.5rem 0; color:#666; font-size:0.9rem; margin-top:2rem; }
   </style>
 </head>
 <body>
   <header>
-    <h1>Honoring Stories. Building Systems. Driving Change.</h1>
-    <p>Helping mission-driven teams turn vision into lasting structures through design, strategy, and advocacy.</p>
+    <div class="container">
+      <h1>JaiSellers Companies</h1>
+      <p style="margin:0.5rem 0 1.5rem; font-size:1.25rem; max-width:40ch;">
+        Honoring Stories. Building Systems. Driving Change.<br />
+        We help mission‑driven teams turn vision into lasting structures through design, strategy, and advocacy.
+      </p>
+      <a href="#contact" style="display:inline-block; padding:0.75rem 1.5rem; background:#fff; color:#042; font-weight:700; border-radius:4px; text-decoration:none;">Start the conversation</a>
+      <nav style="margin-top:1.5rem;">
+        <a href="#about">About</a>
+        <a href="#companies">Divisions</a>
+        <a href="#contact">Contact</a>
+      </nav>
+   <img src="Assets/jaisellers-systems-leadership.jpg"
+     alt="Leadership grounded in systems, structure, and community work"
+     style="width:100%; height:auto; margin-top:1rem; border-radius:12px; box-shadow:0 12px 30px rgba(0,0,0,0.15);">
+    </div>
   </header>
-  <nav>
-    <a href="#work">Our Work</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <section id="work" class="section">
-    <h2>What We Do</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>JaiSellers Designs</h3>
-        <p>Graphic design and brand storytelling for organizations that honor culture and community. From logos to complete identity systems, we craft visuals that resonate.</p>
+
+  <main class="container">
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        JaiSellers Companies sits at the seam where creativity, strategy and advocacy meet.
+        Our practice centers equity and cultural preservation, blending brand storytelling with concrete tools like
+        IRS Form&nbsp;1023 applications, bylaws and governance, budgets, grant strategy and campaign systems.
+        We exist to help leaders build systems that honor stories and drive change.
+      </p>
+    </section>
+
+    <section id="companies">
+      <h2>Our Divisions</h2>
+      <div class="cards">
+        <div class="card">
+          <span class="fa-stack fa-2x" style="color:#0a5; margin-bottom:0.5rem;">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-handshake fa-stack-1x fa-inverse"></i>
+          </span>
+          <h3>JaiSellers Consulting</h3>
+          <p>Strategy and grants: aligning vision with governance, structures and funding to build sustainable organizations.</p>
+          <a href="#consulting" style="display:inline-block;margin-top:0.5rem;color:#0a5;text-decoration:none;font-weight:600;">Explore &rarr;</a>
+        </div>
+        <div class="card">
+          <span class="fa-stack fa-2x" style="color:#0a5; margin-bottom:0.5rem;">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-palette fa-stack-1x fa-inverse"></i>
+          </span>
+          <h3>JaiSellers Design</h3>
+          <p>Branding and storytelling: crafting visual identities, campaigns and communications that honor culture and drive engagement.</p>
+          <a href="#design" style="display:inline-block;margin-top:0.5rem;color:#0a5;text-decoration:none;font-weight:600;">Explore &rarr;</a>
+        </div>
+        <div class="card">
+          <span class="fa-stack fa-2x" style="color:#0a5; margin-bottom:0.5rem;">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-network-wired fa-stack-1x fa-inverse"></i>
+          </span>
+          <h3>JaiSellers Systems</h3>
+          <p>Platforms and support: building websites, tools and operational systems, and providing managed services to keep them running.</p>
+          <a href="#systems" style="display:inline-block;margin-top:0.5rem;color:#0a5;text-decoration:none;font-weight:600;">Explore &rarr;</a>
+        </div>
       </div>
-      <div class="card">
-        <h3>JaiSellers Consulting</h3>
-        <p>Nonprofit strategy and systems with soul: IRS Form&nbsp;1023 preparation, bylaws, governance, budgets, grants, campaign systems, and more—centered on equity and sustainability.</p>
-      </div>
-      <div class="card">
-        <h3>The People’s Brand Guide</h3>
-        <p>Resources and templates that help leaders communicate clearly, build trust, and lead with purpose. A toolkit for mission-driven teams.</p>
-      </div>
-    </div>
-  </section>
-  <section id="about" class="section">
-    <h2>About Josh</h2>
-    <div class="about">
-      <!-- Placeholder image: replace `placeholder.jpg` with your portrait image path -->
-      <img src="JoshJump3.png" alt="Josh Sellers portrait placeholder" />
-      <div>
-        <p>Josh Sellers is a graphic designer, photographer, nonprofit strategist, and systems thinker based in Kings Mountain, NC. As a biracial, gay, Christian creative, Josh works at the seam where creativity, strategy, and advocacy meet. He leads branding campaigns, crafts grants, and builds justice‑centered programs across churches, arts groups, and community organizations—honoring legacy while building what’s next.</p>
-        <p>Through JaiSellers Designs and JaiSellers Consulting, Josh centers equity and cultural preservation, blending brand storytelling with concrete tools like fiscal sponsorship, 1023s, 990s, OKRs, and grant strategy. He’s developing <em>The People’s Brand Guide</em> to help leaders communicate clearly and lead with purpose.</p>
-      </div>
-    </div>
-  </section>
-  <section id="contact" class="section">
-    <h2>Get In Touch</h2>
-    <p style="text-align: center; max-width: 600px; margin: 0 auto 30px;">Ready to turn your vision into a structure that lasts? We’d love to hear from you. Reach out to explore collaborations, request a quote, or schedule a consultation.</p>
-    <div style="text-align: center;">
-      <!-- Update the href mailto link with your real email address -->
-      <a href="mailto:joshua@jaisellers.com" style="background-color:#ffde59;color:#0c2340;padding:10px 20px;border-radius:5px;text-decoration:none;font-weight:bold;">Contact Us</a>
-    </div>
-  </section>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>We’d love to learn about your project and how we can help. Reach out and let’s build something together.</p>
+      <p>Email: <a href="mailto:joshua@jaisellers.com">joshua@jaisellers.com</a></p>
+    </section>
+  </main>
+
   <footer>
-    <p>&copy; <span id="year"></span> JaiSellers Companies. All rights reserved.</p>
+    &copy; <span id="year"></span> Jaisellers Companies
   </footer>
-  <script>
-    // Set the current year in the footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
