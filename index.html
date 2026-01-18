@@ -7,87 +7,263 @@
   <meta name="description" content="JaiSellers Companies helps mission‑driven teams turn vision into lasting structures through design, strategy, and advocacy." />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <style>
-    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin: 0; color: #111; line-height: 1.5; }
-    header { background:#085; padding: 2rem 0 3rem; color: #fff; text-align:center; }
-    header h1 { margin: 0; font-size: 2.5rem; }
-    header p { margin-top: 0.5rem; font-size:1.25rem; max-width: 45ch; margin-left:auto; margin-right:auto; }
-    header a.cta { display:inline-block; margin-top:1.5rem; padding:0.75rem 1.5rem; background:#fff; color:#042; font-weight:700; border-radius:4px; text-decoration:none; transition:background 0.2s,color 0.2s; }
-    header a.cta:hover { background:#e6e6e6; color:#021; }
-    nav { margin-top:2rem; }
-    nav a { margin:0 0.75rem; color: #eef; text-decoration:none; font-weight:600; }
-    nav a:hover { text-decoration:underline; }
-    .container { max-width: 980px; margin: 0 auto; padding: 2rem 1rem; }
-    section { margin-bottom: 3rem; }
-    h2 { font-size:1.75rem; margin-top:0; }
-    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:1rem; margin-top:1.25rem; }
-    .card { border:1px solid #e6e6e6; padding:1.25rem; border-radius:6px; background:#fff; box-shadow:0 1px 2px rgba(0,0,0,0.04); }
-    .card h3 { margin-top:0.5rem; }
-    .card p { margin:0.5rem 0 0; }
-    .card a { color:#085; text-decoration:none; font-weight:600; display:inline-block; margin-top:0.5rem; }
-    .highlight { background:#f5f9f8; border-left:4px solid #085; padding:1.25rem; border-radius:6px; margin-top:2rem; }
-    .highlight h3 { margin-top:0; font-size:1.5rem; }
-    footer { text-align:center; padding:2rem 0; color:#666; font-size:0.9rem; background:#fafafa; }
+    .topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+}
+
+.site-title{ margin:0; }
+
+.site-nav a{
+  margin-left:1rem;
+  text-decoration:none;
+}
+
+.hero{
+  padding:2.25rem 0 1.25rem;
+  max-width: 70ch;
+}
+
+.kicker{
+  margin:0 0 .75rem;
+  opacity:.85;
+}
+
+.hero-title{
+  margin:.25rem 0 .75rem;
+  font-size:2.25rem;
+  line-height:1.1;
+}
+
+.hero-subhead{
+  margin:0 0 1rem;
+  font-size:1.125rem;
+  opacity:.95;
+}
+
+.hero-bullets{
+  margin:0 0 1.25rem 1.25rem;
+}
+
+.cta-row{
+  display:flex;
+  gap:.75rem;
+  flex-wrap:wrap;
+  margin: .75rem 0 .5rem;
+}
+
+.btn{
+  display:inline-block;
+  padding:.75rem 1rem;
+  border-radius:12px;
+  border:1px solid rgba(0,0,0,0.15);
+  text-decoration:none;
+}
+
+.btn.primary{
+  border: none;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.btn.secondary{
+  background: transparent;
+}
+
+.section{
+  padding: 2rem 0;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.section-sub{
+  margin-top:.25rem;
+  opacity:.9;
+  max-width:70ch;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.card{
+  padding: 1rem;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 14px;
+}
+
+.highlight{
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid rgba(0,0,0,0.10);
+}
+
+.contact-box{
+  padding: 1rem;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 14px;
+  max-width: 70ch;
+}
+
+.micro{
+  font-size:.95rem;
+  opacity:.8;
+  margin-top:.5rem;
+}
+
+@media (max-width: 900px){
+  .grid{ grid-template-columns: 1fr; }
+  .hero-title{ font-size: 1.85rem; }
+}
+
   </style>
 </head>
 <body>
   <header>
-    <h1>JaiSellers Companies</h1>
-    <p>Honoring Stories. Building Systems. Driving Change.<br />
-    Helping mission‑driven teams turn vision into lasting structures through design, strategy, and advocacy.</p>
-    <a href="#compliance" class="cta">Explore the Compliance Toolkit</a>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#divisions">Divisions</a>
-      <a href="#compliance">Compliance Toolkit</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <div class="container">
+    <div class="topbar">
+      <h1 class="site-title">JaiSellers Companies</h1>
 
-  <main class="container">
-    <section id="about">
-      <h2>About Us</h2>
-      <p>We sit at the seam where creativity, strategy and advocacy meet. Our practice centers equity and cultural preservation, blending brand storytelling with concrete tools: IRS Form 1023 applications, bylaws and governance documents, budgets, grant strategy and campaign systems. We exist to help leaders build systems that honor stories and drive change.</p>
-    </section>
+      <nav class="site-nav">
+        <a href="#toolkit">Toolkit</a>
+        <a href="#divisions">Divisions</a>
+        <a href="#consulting">Setup Help</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
 
-    <section id="divisions">
-      <h2>Our Divisions</h2>
-      <div class="cards">
-        <div class="card">
-          <span class="fa-stack fa-2x" style="color:#0a5; margin-bottom:0.5rem;">
-            <i class="fas fa-circle fa-stack-2x"></i>
-            <i class="fas fa-handshake fa-stack-1x fa-inverse"></i>
-          </span>
-          <h3>JaiSellers Consulting</h3>
-          <p>Align vision with governance, structures and funding to build sustainable organizations.</p>
-          <a href="#" aria-label="Learn more about JaiSellers Consulting">Learn more →</a>
-        </div>
-        <div class="card">
-          <span class="fa-stack fa-2x" style="color:#0a5; margin-bottom:0.5rem;">
-            <i class="fas fa-circle fa-stack-2x"></i>
-            <i class="fas fa-palette fa-stack-1x fa-inverse"></i>
-          </span>
-          <h3>JaiSellers Design</h3>
-          <p>Craft visual identities, campaigns and communications that honor culture and drive engagement.</p>
-          <a href="#" aria-label="Learn more about JaiSellers Design">Learn more →</a>
-        </div>
-        <div class="card">
-          <span class="fa-stack fa-2x" style="color:#0a5; margin-bottom:0.5rem;">
-            <i class="fas fa-circle fa-stack-2x"></i>
-            <i class="fas fa-network-wired fa-stack-1x fa-inverse"></i>
-          </span>
-          <h3>JaiSellers Systems</h3>
-          <p>Build and support websites, tools and operational systems to keep your work moving.</p>
-          <a href="#" aria-label="Learn more about JaiSellers Systems">Learn more →</a>
-        </div>
+    <section class="hero" aria-label="Homepage hero">
+      <p class="kicker">Honoring Stories. Building Systems. Driving Change.</p>
+
+      <h2 class="hero-title">Get compliant. Get fundable. Look credible.</h2>
+
+      <p class="hero-subhead">
+        The Compliance Toolkit is the practical operating system for mission-driven teams —
+        bylaws, board systems, policies, budgets, and grant-ready templates that keep you in the clear.
+      </p>
+
+      <ul class="hero-bullets">
+        <li>IRS-ready governance + policy templates</li>
+        <li>Budgets + grant materials funders can follow</li>
+        <li>Brand + messaging basics so you stop looking chaotic</li>
+      </ul>
+
+      <div class="cta-row">
+        <a class="btn primary" href="#toolkit">Explore the Compliance Toolkit</a>
+        <a class="btn secondary" href="#consulting">Book setup help</a>
       </div>
-    </section>
 
+      <p class="micro">
+        Justice-centered options included (accessibility, accountability, language) — but built for any mission team.
+      </p>
+    </section>
+  </div>
+</header>
+
+<main class="container">
+  <!-- TOOLKIT -->
+  <section id="toolkit" class="section">
+    <h3>What’s inside the Toolkit</h3>
+    <p class="section-sub">
+      Plug-and-play templates + checklists that turn “we should” into “it’s done.”
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <h4>Bylaws + Board Pack</h4>
+        <p>Board roles, meeting agenda/minutes, governance basics, and structure templates.</p>
+      </div>
+
+      <div class="card">
+        <h4>Policy Pack</h4>
+        <p>Conflict of interest, document retention, whistleblower basics, and operational policies.</p>
+      </div>
+
+      <div class="card">
+        <h4>1023 / Compliance Checklist</h4>
+        <p>A simple roadmap for filings, records, and compliance rhythm.</p>
+      </div>
+
+      <div class="card">
+        <h4>Budget + Grant Templates</h4>
+        <p>Budget shells and narrative structures aligned to what funders expect.</p>
+      </div>
+
+      <div class="card">
+        <h4>Operating System</h4>
+        <p>Trackers, calendars, internal workflows, and “don’t drop the ball” systems.</p>
+      </div>
+
+      <div class="card">
+        <h4>Brand + Social Starter Pack</h4>
+        <p>Template kit + a 30-day content plan so you can show up consistent.</p>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn primary" href="#contact">Get pricing + access</a>
+      <a class="btn secondary" href="#consulting">Add setup help</a>
+    </div>
+  </section>
+
+  <!-- DIVISIONS -->
+  <section id="divisions" class="section">
+    <h3>Divisions</h3>
+    <p class="section-sub">Same mission, different tools. Pick the lane you need.</p>
+
+    <div class="grid">
+      <div class="card">
+        <h4>JaiSellers Consulting (JSC)</h4>
+        <p>Compliance, governance, budgets, grant strategy, and systems implementation.</p>
+      </div>
+
+      <div class="card">
+        <h4>JaiSellers Designs (JSD)</h4>
+        <p>Brand systems, design collateral, web assets, campaign kits — built for mission work.</p>
+      </div>
+
+      <div class="card">
+        <h4>Photography</h4>
+        <p>Select projects. Events, portraits, and brand imagery that matches your story.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- UPSELL -->
+  <section id="consulting" class="section highlight">
+    <h3>Want this built with you?</h3>
+    <p class="section-sub">
+      If you’ve got complexity (reinstatement, board dysfunction, messy books, urgent grants),
+      book a setup session and we’ll turn the toolkit into a working system.
+    </p>
+
+    <div class="cta-row">
+      <a class="btn primary" href="#contact">Book setup + implementation</a>
+      <a class="btn secondary" href="#toolkit">Start with the toolkit</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <h3>Contact</h3>
+    <p class="section-sub">Tell me what you’re trying to fix. I’ll tell you the fastest path.</p>
+
+    <div class="contact-box">
+      <p><strong>Email:</strong> joshuajaisellers@gmail.com</p>
+      <p><strong>What to include:</strong> org name, state, current status (new/restarting/noncompliant), and your #1 goal.</p>
+      <p class="micro">If you want the Toolkit, put “Toolkit” in the subject line.</p>
+    </div>
+  </section>
+</main>
     <section id="compliance">
       <h2>Compliance Toolkit</h2>
       <div class="highlight">
         <h3>Automate your 501(c)(3) Start‑Up Paperwork</h3>
         <p>Our Compliance Toolkit (a.k.a. 501(c)(3) Machine) generates customized Articles of Incorporation and Bylaws from your mission brief. Say goodbye to templates and endless paperwork—our tool delivers ADA‑friendly, large‑print documents that align with NC defaults and IRS requirements. Perfect for new nonprofits and organizations refreshing their governance.</p>
-        <p><a href="#" style="color:#085; font-weight:700;">Get started →</a></p>
+        <p><a href="#" style="color:#085; font-weight:700;">Get started &rarr;</a></p>
       </div>
     </section>
 
