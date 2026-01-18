@@ -8,278 +8,114 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <style>
     .topbar{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:1rem;
-}
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+    }
 
-.site-title{ margin:0; }
+    .site-title{ margin:0; }
 
-.site-nav a{
-  margin-left:1rem;
-  text-decoration:none;
-}
+    .site-nav a{
+      margin-left:1rem;
+      text-decoration:none;
+    }
 
-.hero{
-  padding:2.25rem 0 1.25rem;
-  max-width: 70ch;
-}
+    .hero{
+      padding:2.25rem 0 1.25rem;
+      max-width: 70ch;
+    }
 
-.kicker{
-  margin:0 0 .75rem;
-  opacity:.85;
-}
+    .kicker{
+      margin:0 0 .75rem;
+      opacity:.85;
+    }
 
-.hero-title{
-  margin:.25rem 0 .75rem;
-  font-size:2.25rem;
-  line-height:1.1;
-}
+    .hero-title{
+      margin:.25rem 0 .75rem;
+      font-size:2.25rem;
+      line-height:1.1;
+    }
 
-.hero-subhead{
-  margin:0 0 1rem;
-  font-size:1.125rem;
-  opacity:.95;
-}
+    .hero-subhead{
+      margin:0 0 1rem;
+      font-size:1.125rem;
+      opacity:.95;
+    }
 
-.hero-bullets{
-  margin:0 0 1.25rem 1.25rem;
-}
+    .hero-bullets{
+      margin:0 0 1.25rem 1.25rem;
+    }
 
-.cta-row{
-  display:flex;
-  gap:.75rem;
-  flex-wrap:wrap;
-  margin: .75rem 0 .5rem;
-}
+    .cta-row{
+      display:flex;
+      gap:.75rem;
+      flex-wrap:wrap;
+      margin: .75rem 0 .5rem;
+    }
 
-.btn{
-  display:inline-block;
-  padding:.75rem 1rem;
-  border-radius:12px;
-  border:1px solid rgba(0,0,0,0.15);
-  text-decoration:none;
-}
+    .btn{
+      display:inline-block;
+      padding:.75rem 1rem;
+      border-radius:12px;
+      border:1px solid rgba(0,0,0,0.15);
+      text-decoration:none;
+      transition: transform 220ms cubic-bezier(.2,.9,.3,1), box-shadow 220ms ease;
+      will-change: transform;
+      background: #fff;
+      color: #042;
+    }
 
-.btn.primary{
-  border: none;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-}
+    .btn:active{ transform: scale(.98); }
 
-.btn.secondary{
-  background: transparent;
-}
+    .btn.primary{
+      border: none;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+      background: linear-gradient(180deg,#ffffff,#f7fffb);
+      font-weight:700;
+    }
 
-.section{
-  padding: 2rem 0;
-  border-top: 1px solid rgba(0,0,0,0.08);
-}
+    .btn.primary:hover{ transform: translateY(-4px); box-shadow: 0 18px 36px rgba(0,0,0,0.12); }
+    .btn.secondary{ background: transparent; }
 
-.section-sub{
-  margin-top:.25rem;
-  opacity:.9;
-  max-width:70ch;
-}
+    .section{
+      padding: 2rem 0;
+      border-top: 1px solid rgba(0,0,0,0.08);
+    }
 
-.grid{
-  display:grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-  margin-top: 1rem;
-}
+    .section-sub{
+      margin-top:.25rem;
+      opacity:.9;
+      max-width:70ch;
+    }
 
-.card{
-  padding: 1rem;
-  border: 1px solid rgba(0,0,0,0.12);
-  border-radius: 14px;
-}
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
 
-.highlight{
-  border-radius: 16px;
-  padding: 2rem;
-  border: 1px solid rgba(0,0,0,0.10);
-}
+    .card{
+      padding: 1rem;
+      border: 1px solid rgba(0,0,0,0.12);
+      border-radius: 14px;
+      transition: transform 300ms cubic-bezier(.2,.9,.3,1), box-shadow 300ms ease;
+    }
 
-.contact-box{
-  padding: 1rem;
-  border: 1px solid rgba(0,0,0,0.12);
-  border-radius: 14px;
-  max-width: 70ch;
-}
+    .card:hover{
+      transform: translateY(-6px);
+      box-shadow: 0 16px 32px rgba(0,0,0,0.06);
+    }
 
-.micro{
-  font-size:.95rem;
-  opacity:.8;
-  margin-top:.5rem;
-}
+    .highlight{
+      border-radius: 16px;
+      padding: 2rem;
+      border: 1px solid rgba(0,0,0,0.10);
+    }
 
-@media (max-width: 900px){
-  .grid{ grid-template-columns: 1fr; }
-  .hero-title{ font-size: 1.85rem; }
-}
-
-  </style>
-</head>
-<body>
-  <header>
-  <div class="container">
-    <div class="topbar">
-      <h1 class="site-title">JaiSellers Companies</h1>
-
-      <nav class="site-nav">
-        <a href="#toolkit">Toolkit</a>
-        <a href="#divisions">Divisions</a>
-        <a href="#consulting">Setup Help</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-
-    <section class="hero" aria-label="Homepage hero">
-      <p class="kicker">Honoring Stories. Building Systems. Driving Change.</p>
-
-      <h2 class="hero-title">Get compliant. Get fundable. Look credible.</h2>
-
-      <p class="hero-subhead">
-        The Compliance Toolkit is the practical operating system for mission-driven teams —
-        bylaws, board systems, policies, budgets, and grant-ready templates that keep you in the clear.
-      </p>
-
-      <ul class="hero-bullets">
-        <li>IRS-ready governance + policy templates</li>
-        <li>Budgets + grant materials funders can follow</li>
-        <li>Brand + messaging basics so you stop looking chaotic</li>
-      </ul>
-
-      <div class="cta-row">
-        <a class="btn primary" href="#toolkit">Explore the Compliance Toolkit</a>
-        <a class="btn secondary" href="#consulting">Book setup help</a>
-      </div>
-
-      <p class="micro">
-        Justice-centered options included (accessibility, accountability, language) — but built for any mission team.
-      </p>
-    </section>
-  </div>
-</header>
-
-<main class="container">
-  <!-- TOOLKIT -->
-  <section id="toolkit" class="section">
-    <h3>What’s inside the Toolkit</h3>
-    <p class="section-sub">
-      Plug-and-play templates + checklists that turn “we should” into “it’s done.”
-    </p>
-
-    <div class="grid">
-      <div class="card">
-        <h4>Bylaws + Board Pack</h4>
-        <p>Board roles, meeting agenda/minutes, governance basics, and structure templates.</p>
-      </div>
-
-      <div class="card">
-        <h4>Policy Pack</h4>
-        <p>Conflict of interest, document retention, whistleblower basics, and operational policies.</p>
-      </div>
-
-      <div class="card">
-        <h4>1023 / Compliance Checklist</h4>
-        <p>A simple roadmap for filings, records, and compliance rhythm.</p>
-      </div>
-
-      <div class="card">
-        <h4>Budget + Grant Templates</h4>
-        <p>Budget shells and narrative structures aligned to what funders expect.</p>
-      </div>
-
-      <div class="card">
-        <h4>Operating System</h4>
-        <p>Trackers, calendars, internal workflows, and “don’t drop the ball” systems.</p>
-      </div>
-
-      <div class="card">
-        <h4>Brand + Social Starter Pack</h4>
-        <p>Template kit + a 30-day content plan so you can show up consistent.</p>
-      </div>
-    </div>
-
-    <div class="cta-row">
-      <a class="btn primary" href="#contact">Get pricing + access</a>
-      <a class="btn secondary" href="#consulting">Add setup help</a>
-    </div>
-  </section>
-
-  <!-- DIVISIONS -->
-  <section id="divisions" class="section">
-    <h3>Divisions</h3>
-    <p class="section-sub">Same mission, different tools. Pick the lane you need.</p>
-
-    <div class="grid">
-      <div class="card">
-        <h4>JaiSellers Consulting (JSC)</h4>
-        <p>Compliance, governance, budgets, grant strategy, and systems implementation.</p>
-      </div>
-
-      <div class="card">
-        <h4>JaiSellers Designs (JSD)</h4>
-        <p>Brand systems, design collateral, web assets, campaign kits — built for mission work.</p>
-      </div>
-
-      <div class="card">
-        <h4>Photography</h4>
-        <p>Select projects. Events, portraits, and brand imagery that matches your story.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- UPSELL -->
-  <section id="consulting" class="section highlight">
-    <h3>Want this built with you?</h3>
-    <p class="section-sub">
-      If you’ve got complexity (reinstatement, board dysfunction, messy books, urgent grants),
-      book a setup session and we’ll turn the toolkit into a working system.
-    </p>
-
-    <div class="cta-row">
-      <a class="btn primary" href="#contact">Book setup + implementation</a>
-      <a class="btn secondary" href="#toolkit">Start with the toolkit</a>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section">
-    <h3>Contact</h3>
-    <p class="section-sub">Tell me what you’re trying to fix. I’ll tell you the fastest path.</p>
-
-    <div class="contact-box">
-      <p><strong>Email:</strong> joshuajaisellers@gmail.com</p>
-      <p><strong>What to include:</strong> org name, state, current status (new/restarting/noncompliant), and your #1 goal.</p>
-      <p class="micro">If you want the Toolkit, put “Toolkit” in the subject line.</p>
-    </div>
-  </section>
-</main>
-    <section id="compliance">
-      <h2>Compliance Toolkit</h2>
-      <div class="highlight">
-        <h3>Automate your 501(c)(3) Start‑Up Paperwork</h3>
-        <p>Our Compliance Toolkit (a.k.a. 501(c)(3) Machine) generates customized Articles of Incorporation and Bylaws from your mission brief. Say goodbye to templates and endless paperwork—our tool delivers ADA‑friendly, large‑print documents that align with NC defaults and IRS requirements. Perfect for new nonprofits and organizations refreshing their governance.</p>
-        <p><a href="#" style="color:#085; font-weight:700;">Get started &rarr;</a></p>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Get in Touch</h2>
-      <p>We’d love to learn about your project and how we can help. Reach out and let’s build something together.</p>
-      <p>Email: <a href="mailto:joshua@jaisellers.com">joshua@jaisellers.com</a></p>
-    </section>
-  </main>
-
-  <footer>
-    &copy; <span id="year"></span> JaiSellers Companies
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+    .contact-box{
+      padding: 1rem;
+      border: 1px solid rgba(0,0,0,0.12);
+      border-radius: 14px;
+      max-width: 70ch
