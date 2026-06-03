@@ -4,118 +4,385 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>JaiSellers Companies – Honoring Stories. Building Systems. Driving Change.</title>
-  <meta name="description" content="JaiSellers Companies helps mission‑driven teams turn vision into lasting structures through design, strategy, and advocacy." />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <meta name="description" content="JaiSellers Companies helps mission-driven teams turn vision into lasting structures through design, strategy, and advocacy." />
   <style>
-    .topbar{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:1rem;
+    :root {
+      --ink: #161513;
+      --muted: #625b52;
+      --cream: #f8f2e8;
+      --paper: #fffaf1;
+      --gold: #d7a83f;
+      --gold-light: #f8df7a;
+      --charcoal: #11100f;
+      --green: #0a5b45;
+      --shadow: 0 24px 70px rgba(22, 21, 19, 0.16);
     }
 
-    .site-title{ margin:0; }
+    * { box-sizing: border-box; }
 
-    .site-nav a{
-      margin-left:1rem;
-      text-decoration:none;
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      line-height: 1.6;
+      background: linear-gradient(180deg, #fffaf1 0%, #f4eadc 100%);
     }
 
-    .hero{
-      padding:2.25rem 0 1.25rem;
+    img { max-width: 100%; display: block; }
+
+    a { color: inherit; }
+
+    .site-shell {
+      width: min(1160px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 250, 241, 0.92);
+      border-bottom: 1px solid rgba(215, 168, 63, 0.22);
+      backdrop-filter: blur(16px);
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.85rem 0;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+      min-width: 0;
+    }
+
+    .brand-logo {
+      width: 76px;
+      height: 42px;
+      border-radius: 12px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
+      object-fit: cover;
+    }
+
+    .brand-name {
+      display: grid;
+      line-height: 1.1;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .brand-name span:last-child {
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+    }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .site-nav a {
+      text-decoration: none;
+      transition: color 180ms ease;
+    }
+
+    .site-nav a:hover { color: var(--green); }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: center;
+      padding: clamp(3.5rem, 8vw, 6.5rem) 0;
+    }
+
+    .kicker {
+      margin: 0 0 0.9rem;
+      color: var(--green);
+      font-size: 0.82rem;
+      font-weight: 900;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .hero-title {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.8rem, 7vw, 5.85rem);
+      line-height: 0.94;
+      letter-spacing: -0.055em;
+    }
+
+    .hero-subhead {
+      margin: 1.35rem 0 0;
+      color: var(--muted);
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      max-width: 46rem;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.7rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0.8rem 1.15rem;
+      border: 1px solid rgba(22, 21, 19, 0.14);
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn.primary {
+      color: #fff;
+      background: var(--charcoal);
+      border-color: var(--charcoal);
+      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.18);
+    }
+
+    .btn.secondary { background: rgba(255, 255, 255, 0.48); }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      min-height: clamp(360px, 48vw, 620px);
+      border: 1px solid rgba(215, 168, 63, 0.35);
+      border-radius: 32px;
+      background: #201d18;
+      box-shadow: var(--shadow);
+      isolation: isolate;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(16, 16, 15, 0.64), rgba(16, 16, 15, 0.06) 52%, rgba(16, 16, 15, 0.18));
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-photo {
+      width: 100%;
+      height: 100%;
+      min-height: inherit;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .hero-logo-lockup {
+      position: absolute;
+      left: 1.25rem;
+      bottom: 1.25rem;
+      z-index: 2;
+      width: min(260px, 48%);
+      border-radius: 22px;
+      box-shadow: 0 18px 46px rgba(0, 0, 0, 0.35);
+    }
+
+    .section {
+      padding: clamp(2.75rem, 6vw, 5rem) 0;
+      border-top: 1px solid rgba(22, 21, 19, 0.08);
+    }
+
+    .section h2 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2rem, 4vw, 3.35rem);
+      line-height: 1;
+      letter-spacing: -0.035em;
+    }
+
+    .section-sub {
       max-width: 70ch;
+      margin: 0.85rem 0 0;
+      color: var(--muted);
+      font-size: 1.08rem;
     }
 
-    .kicker{
-      margin:0 0 .75rem;
-      opacity:.85;
-    }
-
-    .hero-title{
-      margin:.25rem 0 .75rem;
-      font-size:2.25rem;
-      line-height:1.1;
-    }
-
-    .hero-subhead{
-      margin:0 0 1rem;
-      font-size:1.125rem;
-      opacity:.95;
-    }
-
-    .hero-bullets{
-      margin:0 0 1.25rem 1.25rem;
-    }
-
-    .cta-row{
-      display:flex;
-      gap:.75rem;
-      flex-wrap:wrap;
-      margin: .75rem 0 .5rem;
-    }
-
-    .btn{
-      display:inline-block;
-      padding:.75rem 1rem;
-      border-radius:12px;
-      border:1px solid rgba(0,0,0,0.15);
-      text-decoration:none;
-      transition: transform 220ms cubic-bezier(.2,.9,.3,1), box-shadow 220ms ease;
-      will-change: transform;
-      background: #fff;
-      color: #042;
-    }
-
-    .btn:active{ transform: scale(.98); }
-
-    .btn.primary{
-      border: none;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-      background: linear-gradient(180deg,#ffffff,#f7fffb);
-      font-weight:700;
-    }
-
-    .btn.primary:hover{ transform: translateY(-4px); box-shadow: 0 18px 36px rgba(0,0,0,0.12); }
-    .btn.secondary{ background: transparent; }
-
-    .section{
-      padding: 2rem 0;
-      border-top: 1px solid rgba(0,0,0,0.08);
-    }
-
-    .section-sub{
-      margin-top:.25rem;
-      opacity:.9;
-      max-width:70ch;
-    }
-
-    .grid{
-      display:grid;
+    .grid {
+      display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1rem;
-      margin-top: 1rem;
+      margin-top: 1.35rem;
     }
 
-    .card{
-      padding: 1rem;
-      border: 1px solid rgba(0,0,0,0.12);
-      border-radius: 14px;
-      transition: transform 300ms cubic-bezier(.2,.9,.3,1), box-shadow 300ms ease;
+    .card, .highlight, .contact-box {
+      border: 1px solid rgba(22, 21, 19, 0.1);
+      border-radius: 24px;
+      background: rgba(255, 250, 241, 0.72);
+      box-shadow: 0 12px 34px rgba(22, 21, 19, 0.06);
     }
 
-    .card:hover{
-      transform: translateY(-6px);
-      box-shadow: 0 16px 32px rgba(0,0,0,0.06);
+    .card {
+      padding: 1.35rem;
+      transition: transform 220ms ease, box-shadow 220ms ease;
     }
 
-    .highlight{
-      border-radius: 16px;
-      padding: 2rem;
-      border: 1px solid rgba(0,0,0,0.10);
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 42px rgba(22, 21, 19, 0.1);
     }
 
-    .contact-box{
-      padding: 1rem;
-      border: 1px solid rgba(0,0,0,0.12);
-      border-radius: 14px;
-      max-width: 70ch
+    .card h3 {
+      margin: 0 0 0.45rem;
+      font-size: 1.2rem;
+    }
+
+    .card p { margin: 0; color: var(--muted); }
+
+    .highlight {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1.5rem;
+      align-items: center;
+      margin-top: 1.4rem;
+      padding: clamp(1.4rem, 4vw, 2.4rem);
+      background: linear-gradient(135deg, rgba(17, 16, 15, 0.96), rgba(58, 45, 22, 0.92));
+      color: #fff;
+    }
+
+    .highlight p { color: rgba(255, 255, 255, 0.78); }
+
+    .highlight .btn {
+      color: var(--charcoal);
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      border: 0;
+      white-space: nowrap;
+    }
+
+    .contact-box {
+      margin-top: 1.25rem;
+      padding: 1.4rem;
+      max-width: 760px;
+    }
+
+    .contact-box a { color: var(--green); font-weight: 900; }
+
+    footer {
+      padding: 2rem 0 2.5rem;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.94rem;
+    }
+
+    @media (max-width: 820px) {
+      .topbar { align-items: flex-start; flex-direction: column; }
+      .site-nav { flex-wrap: wrap; }
+      .site-nav a { padding: 0.15rem 0; }
+      .hero { grid-template-columns: 1fr; padding-top: 2.4rem; }
+      .hero-card { min-height: 430px; border-radius: 24px; }
+      .hero-logo-lockup { width: min(230px, 62%); }
+      .grid { grid-template-columns: 1fr; }
+      .highlight { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-shell topbar">
+      <a class="brand" href="#top" aria-label="JaiSellers Companies home">
+        <img class="brand-logo" src="jsco-logo.svg" alt="JSCo JaiSellers Companies logo" />
+        <span class="brand-name"><span>JaiSellers</span><span>Companies</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#divisions">Divisions</a>
+        <a href="#compliance">Compliance Toolkit</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="site-shell hero" aria-labelledby="hero-title">
+      <div>
+        <p class="kicker">Strategy · Design · Systems</p>
+        <h1 class="hero-title" id="hero-title">Honoring stories. Building systems. Driving change.</h1>
+        <p class="hero-subhead">JaiSellers Companies helps mission-driven teams turn vision into lasting structures through design, strategy, governance, and advocacy.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="#contact">Start a conversation</a>
+          <a class="btn secondary" href="#divisions">Explore the work</a>
+        </div>
+      </div>
+
+      <figure class="hero-card" aria-label="JaiSellers leadership portrait">
+        <img class="hero-photo" src="jaisellers-systems-leadership.jpg" alt="Joshua Jai Sellers in a strategic planning setting" />
+        <img class="hero-logo-lockup" src="jsco-logo.svg" alt="JSCo JaiSellers Companies logo" />
+      </figure>
+    </section>
+
+    <section class="site-shell section" id="about">
+      <h2>Where creativity, strategy, and advocacy meet.</h2>
+      <p class="section-sub">Our practice centers equity and cultural preservation while turning big ideas into concrete tools: governance documents, IRS Form 1023 support, budgets, grant strategy, campaign systems, and accessible digital experiences.</p>
+    </section>
+
+    <section class="site-shell section" id="divisions">
+      <h2>Our divisions</h2>
+      <p class="section-sub">Each lane supports leaders who need beautiful communication and durable operating structure.</p>
+      <div class="grid">
+        <article class="card">
+          <h3>JaiSellers Consulting</h3>
+          <p>Align vision with governance, funding, and operating structure so organizations can grow with clarity.</p>
+        </article>
+        <article class="card">
+          <h3>JaiSellers Design</h3>
+          <p>Create visual identities, campaigns, and communications that honor culture and move people to act.</p>
+        </article>
+        <article class="card">
+          <h3>JaiSellers Systems</h3>
+          <p>Build practical websites, tools, and digital workflows that keep mission-driven work moving.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="site-shell section" id="compliance">
+      <h2>Compliance Toolkit</h2>
+      <div class="highlight">
+        <div>
+          <h3>501(c)(3) start-up paperwork without the template maze.</h3>
+          <p>Generate customized Articles of Incorporation and Bylaws from your mission brief, with accessible, large-print outputs aligned to North Carolina defaults and IRS requirements.</p>
+        </div>
+        <a class="btn" href="#contact">Ask about the toolkit</a>
+      </div>
+    </section>
+
+    <section class="site-shell section" id="contact">
+      <h2>Get in touch</h2>
+      <p class="section-sub">Tell us what you are building, what changed, or what needs to be stabilized. We will help you get the right story and system back in place.</p>
+      <div class="contact-box">
+        <p>Email: <a href="mailto:joshua@jaisellers.com">joshua@jaisellers.com</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="site-shell">&copy; 2026 JaiSellers Companies. All rights reserved.</div>
+  </footer>
+</body>
+</html>
